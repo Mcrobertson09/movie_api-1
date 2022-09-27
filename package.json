@@ -1,0 +1,26 @@
+{
+  "name": "movie_api-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mcrobertson09/movie_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mcrobertson09/movie_api/issues"
+  },
+  "homepage": "https://github.com/Mcrobertson09/movie_api#readme",
+  "dependencies": {
+    "body": "^5.1.0",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20",
+    "parser": "^0.1.4"
+  }
+}
