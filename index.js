@@ -120,7 +120,7 @@ app.get('/users', (req, res) => {
 
 app.get('/users/:name', (req, res) => {
   const { userName } = req.params;
-  const user = users.find(user => user.user.name === userName).user;
+  const user = users.find(user => user.name === userName).user;
   if (user) {
     res.status(200).json(user)
   } else {
@@ -183,7 +183,15 @@ app.post('/movies', (req, res) => {
 });
 
 app.post('/movies/:id/:title', (req, res) => {
-  res.send('Added to Favorites.')
+  const { id, movieTitle } = req.params;
+   let user = user.find( user => user.id == id );
+
+   if (user) {
+    user.favoriteMovies.push(movieTitle);
+    res.status(200).json(user);
+   } else {
+    res.status(400).send("no user in the db.")
+   }
 
 })
 
@@ -203,11 +211,11 @@ app.delete('/movies/:id', (req, res) => {
   res.send('Successful Delete request');
 });
 
-app.delete('/users/:id', (res, req) => {
+app.delete('/users/:id', (req, res) => {
   res.send('the user has been removed sucessfully!')
 })
 
-app.delete('/movies/:id/:title', (res, req) => {
+app.delete('/movies/:id/:title', (req, res) => {
   res.send("sucessfully deleted title.")
 })
 
